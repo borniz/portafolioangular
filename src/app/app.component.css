@@ -1,0 +1,277 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    background-color: #121212;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Navbar */
+.containerNabvar {
+    font-family: "Playfair Display", serif;
+
+    position: fixed;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    width: 350px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 40px;
+    top: 0;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Contenido principal */
+.containerinfo {
+    margin-left: 550px;
+    padding: 20px;
+    margin-right: 40px;
+    width: calc(100vw - 550px);
+    box-sizing: border-box;
+}
+
+/* Secciones */
+.containerAbout,
+.containerExperience,
+.containerProy {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Proyectos */
+.containerProyect {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.proyect {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.proyectContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Imágenes y videos */
+.proyectDate img,
+.proyectDate iframe {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.nameContainer{
+  white-space: nowrap;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  font-family: sans-serif;
+  letter-spacing: 0.1;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 rgb(230, 10, 10),
+    1px 5px 0 grey,
+    5px 13px 15px black;
+    transform-style: preserve-3d;
+    animation: dName 3s ease-out infinite alternate;
+}
+@keyframes dName{
+    0%{
+        transform:translateZ(0) rotateX(120deg)scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Descripción */
+.proyectDescription {
+    margin-left: 10px;
+    width: 60vw;
+    overflow: hidden;
+    max-height: 6vh;
+    transition: max-height 500ms ease-in-out, opacity 0.3s;
+}
+
+/* Tecnologías */
+.proyectTecno {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.1s;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Hover (restaurado como lo tenías) */
+.proyect:hover {
+    margin-bottom: 300px;
+    margin-top: 50px;
+    
+}
+.containerProy:hover h1{
+    /* transform:rotateX(120deg) ; */
+
+    animation: textProyect 1s ease-out infinite alternate;
+}
+@keyframes textProyect{
+    0%{
+        transform:  rotateX(150deg) ;
+        opacity: 0.5;
+        background: linear-gradient(rgb(44, 8, 116),rgba(255,255,255,255));
+        -webkit-background-clip:text;
+    }
+}
+.proyect:hover .proyectDate {
+    max-height: 50vh;
+    text-align: center;
+    padding-top: 100px;
+    
+}
+
+.proyect:hover .proyectDescription {
+    max-height: max-content;
+}
+
+.proyect:hover .proyectTecno,
+.proyectContent:hover + .proyectTecno {
+    opacity: 1;
+    visibility: visible;
+}
+
+.proyect:hover h2 {
+    color: rgba(94,234,212,1);
+}
+
+.tecnoContent {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.containerIndex{
+    margin-bottom: 50px;
+}
+.contactContent{
+    position: absolute;
+   
+    bottom: 30px;
+}
+.contact{
+    display:flex;
+}
+.containerIndex a{
+   
+ font-size: 22px;
+}
+.contactContent h3{
+    margin:10px;
+}
+.logoLinkedin{
+    text-shadow:1px 1px 1 red,2px 2px 2 red;
+    margin-right: 1rem;
+}
+.logoLinkedin:hover{
+    animation: logolink 2s ease-out infinite alternate;
+}
+.logoWhat:hover{
+    animation: logolink 2s ease-out infinite alternate;
+
+}
+@keyframes logolink{
+    0%{
+        transform: rotate(120deg);
+        opacity: 0;
+    }
+}
+/* Links */
+a, h4 {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background: linear-gradient(132deg, #0d0020 10%, #304f99, #9db760);
+    border-radius: 20px;
+    font-size: 22px;
+}
+h1,h2,a{
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+    .containerNabvar {
+        width: 250px;
+        left: 10px;
+    }
+
+    .containerinfo {
+        margin-left: 280px;
+        width: calc(100vw - 300px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerNabvar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .containerinfo {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .proyectContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proyectDate img,
+    .proyectDate iframe {
+        width: 100%;
+        height: auto;
+    }
+}
